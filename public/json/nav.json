@@ -1,0 +1,42 @@
+{
+  "code": 0,
+  "permissions": 1,
+  "massage": "success",
+  "data": [
+    {
+      "id": 1,
+      "name": "测试1",
+      "path": "/home"
+    },
+    {
+      "id": 2,
+      "name": "测试2",
+      "path": "/about"
+    },
+    {
+      "id": 3,
+      "name": "测试3",
+      "path": "/about"
+    },
+    {
+      "id": 4,
+      "name": "测试4",
+      "path": "/about"
+    },
+    {
+      "id": 5,
+      "name": "测试5",
+      "path": "/about"
+    },
+    {
+      "id": 6,
+      "name": "测试6",
+      "path": "/about"
+    },
+    {
+      "id": 7,
+      "name": "测试7",
+      "path": "/about"
+    }
+  ]
+}
