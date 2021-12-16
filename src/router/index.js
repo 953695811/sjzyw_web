@@ -23,8 +23,19 @@ const routes = [
   },
   {
     path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
+    name: 'About'
+  },
+  {
+    path: '/qushi',
+    name: 'Qushi',
+    component: () => import('../views/Qushi.vue'),
+    children: [
+      {
+        path: '/qushiui',
+        name: 'qushiui',
+        component: () => import('../components/Qushi/Qushiui.vue')
+      }
+    ]
   }
 ]
 

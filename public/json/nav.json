@@ -5,18 +5,41 @@
   "data": [
     {
       "id": 1,
-      "name": "测试1",
+      "name": "首页",
       "path": "/home"
     },
     {
       "id": 2,
-      "name": "测试2",
+      "name": "关于",
       "path": "/about"
     },
     {
       "id": 3,
-      "name": "测试3",
-      "path": "/about"
+      "name": "趋势",
+      "path": "/qushi",
+      "children": [
+        {
+          "id": 31,
+          "name": "UI",
+          "path": "/qushiui"
+        },
+        {
+          "id": 32,
+          "name": "平面",
+          "path": "qushi_pm"
+        },
+        {
+          "id": 33,
+          "name": "三维",
+          "children": [
+            {
+              "id": 331,
+              "name": "室内",
+              "path": "/sw_sn"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 4,

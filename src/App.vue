@@ -9,8 +9,11 @@
     </header>
     <main>
       <ul class="nav">
-        <li v-for="item in navlist" :key="item.id" @click="goToPage(item)">
-          {{ item.name }}
+        <li v-for="item in navlist" :key="item.id">
+          <p @click="goToPage(item)">{{ item.name }}</p>
+          <div v-if="item.children">
+            <AsideItem :asideChildren="item.children"></AsideItem>
+          </div>
         </li>
       </ul>
       <div class="view">
@@ -21,6 +24,7 @@
 </template>
 
 <script>
+import AsideItem from './components/AsideItem/AsideItem.vue'
 export default {
   // 组件名称
   name: '',
@@ -29,6 +33,7 @@ export default {
   },
   components: {
     // 注册组件
+    AsideItem
   },
   created() {
     // 获取主屏导航按钮数据
@@ -136,11 +141,16 @@ export default {
       background-color: rgb(241, 241, 241);
       > li {
         line-height: 40px;
-        padding-left: 20px;
         font-size: 14px;
-        border-bottom: 1px solid rgb(224, 224, 224);
+        text-indent: 1em;
         cursor: pointer;
-        &:hover {
+        &:hover > div > div {
+          display: block;
+        }
+        > p {
+          border-bottom: 1px solid rgb(224, 224, 224);
+        }
+        > p:hover {
           background-color: #fff;
         }
       }
@@ -150,6 +160,21 @@ export default {
       height: calc(100vh - 60px);
       background-color: rgb(66, 66, 66);
       overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: #757b8d;
+      }
+      &::-webkit-scrollbar-track {
+        /*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        background: #ffffff;
+      }
     }
   }
 }
